@@ -1725,6 +1725,25 @@
       }
     `;
     document.head.appendChild(style);
+    // ===== Disable Right-Click =====
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  return false;
+});
+
+// Optional: Show a warning message when right-click is attempted
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  // Uncomment below to show a SweetAlert (you already have SweetAlert2 loaded)
+   Swal.fire({
+    icon: 'warning',
+    title: 'Right-click disabled',
+    text: 'This content is protected.',
+     timer: 1500,
+     showConfirmButton: false
+   });
+  return false;
+});
   </script>
 </body>
 </html>
